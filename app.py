@@ -2,19 +2,12 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image, ImageOps
-python3 -m venv myenv
-source myenv/bin/activate   # On Windows: myenv\Scripts\activate
-pip install Pillow==9.5.0
-pip install tensorflow keras scikit-learn joblib
+
 
 
 # Load trained model
 model = load_model('hs1.h5')
-import joblib
 
-# Save the model object as a .pkl file
-joblib.dump(model, 'hs1.pkl')  # OR
-joblib.dump(model, 'hs1.sav')
 
 # Mapping of classes to letters
 CLASS_MAP = {i: chr(65 + i) for i in range(26) if i != 9}  # Exclude 'J'
